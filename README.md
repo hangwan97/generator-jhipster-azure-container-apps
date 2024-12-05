@@ -79,7 +79,33 @@ npm run dev
 http://localhost:3000/
 ```
 
-## 🎉 How to deploy on Azure for [free](<(https://azure.microsoft.com/products/container-apps#Pricing)>)
+## 🎉 How to deploy on Azure with [free grants](<(https://azure.microsoft.com/products/container-apps#Pricing)>)
+
+Jhipster Azure Container Apps provides multiple ways to deploy on Azure, you can deploy with the built-in [Terraform](https://www.terraform.io/), [Bicept](https://learn.microsoft.com/azure/azure-resource-manager/bicep/overview?tabs=bicep), [Azure Developer CLI(AZD)](https://learn.microsoft.com/azure/developer/azure-developer-cli/) or directly from [source code](https://learn.microsoft.com/azure/container-apps/java-get-started?pivots=jar).
+
+### Terraform
+
+1. Make sure you marked `Terraform` when generating the project.
+1. Make sure you have [Terraform](https://learn.microsoft.com/azure/developer/terraform/quickstart-configure) installed and configured.
+1. Change into the Terraform folder: `cd terraform`
+1. Run the following command to initialize Terraform:
+   </br> `terraform init`
+1. Once finished, privision the necessary resource on Azure with:
+   </br> `terraform apply -auto-approve`
+1. Now you can deploy the project with:
+   </br> `.\deploy.ps1`
+
+### Bicep
+
+1. Make sure you marked `Bicep` when generating the project.
+1. Change into the bicep folder: `cd bicep`
+1. Setup bicep with:
+</br> `az deployment sub create -f ./main.bicep --location=eastus2 --name jhipster-aca --only-show-errors`
+</br> Here you can replace the `location` and the `name` parameters with your own choices.
+1. Now you can deploy the project with:
+   </br> `.\deploy.ps1`
+
+### Azure Developer CLI(AZD)
 
 1. Log in to [azd](https://learn.microsoft.com/azure/developer/azure-developer-cli/install-azd). Only required once per-install.
    </br> `azd auth login`
@@ -93,6 +119,10 @@ After the command is executed, you can see the following log signs that the depl
 ```text
 SUCCESS: Your up workflow to provision and deploy to Azure completed in <deployment-time>.
 ```
+
+### Deploy from artifact, source code, IDE and more
+
+In addition to the options mentioned, Azure Container Apps offers a variety of deployment methods, all simplified by its built-in Java support. Explore how to easily deploy your project by visiting: [Launch your first Java application in Azure Container Apps](https://learn.microsoft.com/azure/container-apps/java-get-started).
 
 The output **Deploying service api** and **Deploying service web** are the endpoints to access the todo application.
 
