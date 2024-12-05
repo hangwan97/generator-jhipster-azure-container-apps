@@ -29,7 +29,6 @@ The following prerequisites arer equired to deploy this application to Azure.
 
 - Azure Subscription: [Try Azure Container Apps for free](https://azure.microsoft.com/products/container-apps#Pricing). You can start with the free tier: The first 180,000 vCPU per second, 360,000 GiB/s, and 2 million requests each month are free.
 - [Docker](https://www.docker.com/)
-- [Azure Developer CLI](https://aka.ms/azd-install)
 
 ## 🚀 Get Started
 
@@ -99,6 +98,7 @@ JHipster Azure Container Apps provides multiple ways to deploy on Azure, you can
 ### Bicep
 
 1. Make sure you marked `Bicep` when generating the project.
+1. Make sure you have [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli) installed and configured.
 1. Change into the bicep folder: `cd bicep`
 1. Setup bicep with:
 </br> `az deployment sub create -f ./main.bicep --location=eastus2 --name jhipster-aca --only-show-errors`
@@ -109,7 +109,8 @@ JHipster Azure Container Apps provides multiple ways to deploy on Azure, you can
 
 ### Azure Developer CLI(AZD)
 
-1. Log in to [azd](https://learn.microsoft.com/azure/developer/azure-developer-cli/install-azd). Only required once per-install.
+1. Make sure you have [Azure Developer CLI](https://aka.ms/azd-install) installed and configured.
+1. Log in to AZD, only required once per-install.
    </br> `azd auth login`
    - If you are on Windows, install [powershell](https://learn.microsoft.com/powershell/scripting/install/installing-powershell-on-windows)
 1. Navigate to the generated project directory and run
