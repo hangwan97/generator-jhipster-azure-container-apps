@@ -81,7 +81,7 @@ http://localhost:3000/
 
 ## 🎉 How to deploy on Azure with [free grants](<(https://azure.microsoft.com/products/container-apps#Pricing)>)
 
-Jhipster Azure Container Apps provides multiple ways to deploy on Azure, you can deploy with the built-in [Terraform](https://www.terraform.io/), [Bicept](https://learn.microsoft.com/azure/azure-resource-manager/bicep/overview?tabs=bicep), [Azure Developer CLI(AZD)](https://learn.microsoft.com/azure/developer/azure-developer-cli/) or directly from [source code](https://learn.microsoft.com/azure/container-apps/java-get-started?pivots=jar).
+JHipster Azure Container Apps provides multiple ways to deploy on Azure, you can deploy with the built-in [Terraform](https://www.terraform.io/), [Bicep](https://learn.microsoft.com/azure/azure-resource-manager/bicep/overview?tabs=bicep), [Azure Developer CLI(AZD)](https://learn.microsoft.com/azure/developer/azure-developer-cli/) or directly from [source code](https://learn.microsoft.com/azure/container-apps/java-get-started?pivots=jar).
 
 ### Terraform
 
@@ -93,7 +93,8 @@ Jhipster Azure Container Apps provides multiple ways to deploy on Azure, you can
 1. Once finished, privision the necessary resource on Azure with:
    </br> `terraform apply -auto-approve`
 1. Now you can deploy the project with:
-   </br> `.\deploy.ps1`
+   - Linux/MacOS: `.\deploy.sh`. You can run the deployment script by adding options `subId`, `region` and `resourceGroupName`.
+   - Windows: `.\deploy.ps1`. You will be prompted to provide `subId`, `region`, and `resourceGroupName`.
 
 ### Bicep
 
@@ -103,7 +104,8 @@ Jhipster Azure Container Apps provides multiple ways to deploy on Azure, you can
 </br> `az deployment sub create -f ./main.bicep --location=eastus2 --name jhipster-aca --only-show-errors`
 </br> Here you can replace the `location` and the `name` parameters with your own choices.
 1. Now you can deploy the project with:
-   </br> `.\deploy.ps1`
+   - Linux/MacOS: `.\deploy.sh`. You can run the deployment script by adding options `subId`, `region` and `resourceGroupName`.
+   - Windows: `.\deploy.ps1`. You will be prompted to provide `subId`, `region`, and `resourceGroupName`.
 
 ### Azure Developer CLI(AZD)
 
